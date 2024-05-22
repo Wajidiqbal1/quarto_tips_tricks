@@ -1,0 +1,15 @@
+body {
+  text-align: justify;
+}
+
+/* Center the title, author, and date */
+#title-block-container {
+  text-align: center;
+}
+
+#title-block-container h1,
+#title-block-container .author,
+#title-block-container .date {
+  text-align: center;
+  margin-bottom: 1em;  /* Increase the margin-bottom to 1em */
+}

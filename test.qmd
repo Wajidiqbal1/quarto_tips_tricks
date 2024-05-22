@@ -1,0 +1,90 @@
+---
+title: "Ultimate guide to the usage of Quarto for documentation"
+author: "wajid Iqbal"
+format:
+  html:
+    toc: true
+    toc_float: true
+    theme: yeti
+    highlight-style: tango
+    code-fold: show
+    code-summary: wanna see the code
+    code-copy: hover
+    df-print: paged
+    smooth-scroll: false
+    number-sections: true
+    css: styles.css
+    include-after-body: footer.html
+bibliography: references.bib
+---
+
+# Quarto
+
+[***Quarto***]{.underline} is a versatile open-source tool for creating dynamic documents, presentations, websites, and blogs using plain text files. It supports multiple languages, including `R`, `Python`, and `Julia`, and allows seamless integration of code and narrative. Quarto is designed for technical and scientific communication, providing powerful features for cross-referencing, citations, and output customization to various formats like HTML, PDF, and Word which we will discuss one by one. you can find the official documentation of quarto [here](https://quarto.org/docs/authoring/markdown-basics.html).
+
+A quick tour of how to start your first quarto or `.qmd` file. once you open r studio i would suggest to go to File \> New project \> New Directory \> Quarto project, select the name and the path where you want your r project to be saved. once you are done with this, now instead of no project you will see the name that you have selected for your project. all you need now is to open any blank quarto document in your project file inside r studio as shown in figure down below.
+
+![opening r quarto document](intro.PNG){fig-align="center" width="4in"}
+
+## Text formatting
+
+Quarto operates on `Markdown`, a simple markup language that allows you to create formatted text using a plain-text editor. for example by typing `Hi` surrounded by double asterisk would result in making the word **Hi** bold in output html file.the full markdown syntax and how to use it is listed in figure 1.
+
+![Markdown syntax](markdown_syntac.PNG){width="6in"}
+
+one thing that is really important here that you do not need to remember these shortcuts in order to have these type of outputs in your html thanks to the visual editor that just like Microsoft word offers you these easy to access point-to-clicks that can does this for you, all you have to do is highlight the text that you want to be bold and then click on Format tab: a drop-down menu will open which and from their you can select whichever formatting you want. all the list of formatting options are shown in the figure 2.
+
+![Formatting options available under the Format drop_down](formatting_options.PNG){fig-align="center" width="2in"}
+
+## Table of contents, Horizontal Rule and Callout
+
+some of the options that quarto offers are simply easy to use and they have been programmed in a logical fashion, meaning you just have to mention it in your yaml header and either you want them or not (true or false) you can generate them. for table of contents you just need to write the the code `toc: true` and if you want them to be floating then you can turn the floating to be true as well by the code `toc_float: true`. the whole list of functions that can be included in the yaml regarding themes, title and author and everything [here](https://quarto.org/docs/reference/formats/html.html). feel free to explore all of these options. ultimately if you want to draw a horizontal line after a paragraph or a line you can click on insert and select `Horizontal Rule` and a line will be drawn in the output document.
+
+Time to `callout` which is : `callout` are special formatted blocks in `quarto` used to highlights **important information, tips, warning or notes**. they are visually distinct and helps draw attention to specific parts of the documents. In order to generate a callout on your quarto markdown file click on insert \> and you will find `callout`. once you click on it it will ask for what type of call outs you want, decide it and click ok.
+
+::: callout-important
+## Never Stop learning
+
+each day try to learn something new
+:::
+
+![Quarto logo: where fig-align is center and width is 6 suggested by [this book](https://r4ds.hadley.nz/quarto)](download.png){fig-align="center" width="6in"}
+
+## Number section
+
+if you want your document to be numberized meaning every heading should have a specific number attached to it then just in the yaml header specify the `number-sections: true`
+
+## Footnotes
+
+if you are interested in footnote for a specific part of your text then just click on insert and select footnote or alternatively you can use a shortcut cntrl+shift+f7,let try an example, hi how are you[^1]
+
+[^1]: these are the greeting words of the English language
+
+## citations
+
+A mutation in [*TRAPPC9*]{.underline} gene can cause Intellectual Disability [@Mir2009]if let say i want to reference this i would go to insert again and click on citation select your database for the referencing such as in this case i choose pubmed and then you can search the paper by the name of it or by searching for the doi number of that paper.
+
+## chunk labels
+
+if you want to insert r code then the shortcut is cntrl+Alt+i. there are several options in markdown language that you can specify in your code that will ultimately define how your output file will look like
+
+```{r}
+#| label: simple-addition
+#| warning: false
+#| message: false
+#| eval: true # if eval is false then it would not let the output file to have the result of the code and if you turn it to true then will see the code in the output file meaning the code has been evaluated
+
+1+1
+library(tidyverse)
+
+```
+
+## Tips to make your documents polished
+
+all the useful functions have been summarized in the following figures to document your work properly.
+
+![tips for making polished documentation taken from [here](https://github.com/dpbisme)](tips.PNG){fig-align="center" width="6in"}
+
+## conclusion
+
+this conclude our today's learning, i hope you would have learnt alot from it.
